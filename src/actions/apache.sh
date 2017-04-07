@@ -2,6 +2,12 @@
 echo "[******] Copying and enable virtualhost 'site.conf'";
 cp /tmp/src/actions/virtual-host/site.conf /etc/apache2/sites-available/site.conf
 
+echo "[******] Copying configurations for security of apache.";
+cp /tmp/src/actions/conf-available/security.conf /etc/apache2/conf-available/security.conf
+
+echo "[******] Copying configurations for security of apache.";
+cp /tmp/src/actions/mods-available/status.conf /etc/apache2/mods-available/status.conf
+
 a2ensite site.conf
 
 echo "[******] Disable default virtualhost '000-default.conf'";
