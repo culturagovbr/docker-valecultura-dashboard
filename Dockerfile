@@ -27,7 +27,9 @@ RUN chmod +x -R /tmp/src/
 EXPOSE 80
 EXPOSE 9000
 
-WORKDIR /var/www/
+WORKDIR /var/
+RUN git clone http://git.cultura.gov.br/95274316115/valecultura-dashboard.git www
+WORKDIR /var/www
 
 RUN echo "[ ***** ***** ***** ] - Begin of Actions inside Image ***** ***** ***** "
 CMD /tmp/src/actions/start.sh
