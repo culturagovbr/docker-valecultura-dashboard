@@ -8,7 +8,7 @@ if ! [ -e "/var/www/valecultura-dashboard/index" ] ; then
         ( set -x; ls -A; sleep 10 )
     fi
     echo "[ ****************** ] Cloning Project repository to tmp folder"
-    git clone -b http://git.cultura.gov.br/95274316115/valecultura-dashboard.git
+    git clone -b http://git.cultura.gov.br/95274316115/valecultura-dashboard.git /tmp/valecultura-dashboard
     ls -la /tmp/valecultura-dashboard
 
     echo "[ ****************** ] Copying Project from temporary folder to workdir"
