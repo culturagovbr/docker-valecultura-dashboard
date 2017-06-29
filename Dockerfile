@@ -24,12 +24,15 @@ RUN docker-php-ext-install zip
 
 RUN chmod +x -R /tmp/src/
 
+WORKDIR /var/www
+
 EXPOSE 80
 EXPOSE 9000
 
-WORKDIR /var/
-RUN git clone http://git.cultura.gov.br/95274316115/valecultura-dashboard.git www
-WORKDIR /var/www
+RUN echo "[ ***** ***** ***** ] - Setting Entrypoint to do actions apter the container was created and volumes mapped ***** ***** ***** "
+
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 RUN echo "[ ***** ***** ***** ] - Begin of Actions inside Image ***** ***** ***** "
 CMD /tmp/src/actions/start.sh
